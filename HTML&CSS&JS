@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>加入 JS 的互動課表</title>
+    <style>
+        /* 保留之前的 CSS */
+        body { font-family: sans-serif; padding: 40px; background-color: #f4f7f6; }
+        table { width: 100%; border-collapse: collapse; background: white; }
+        th, td { padding: 12px; border: 1px solid #ddd; text-align: center; }
+        th { background-color: #3498db; color: white; }
+
+        /* 新增：高亮樣式 */
+        .highlight {
+            background-color: #ffeb3b !important; /* 明亮的黃色 */
+            font-weight: bold;
+            border: 2px solid #f39c12;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        .btn:hover { background-color: #27ae60; }
+    </style>
+</head>
+<body>
+
+    <h1>我的智慧課表</h1>
+    
+    <button class="btn" onclick="highlightToday()">顯示今天課程</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>時段</th>
+                <th>週一</th>
+                <th>週二</th>
+                <th>週三</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>上午</td>
+                <td class="day-1">計算機概論</td> <td class="day-2">微積分</td>
+                <td class="day-3">離散數學</td>
+            </tr>
+            <tr>
+                <td>下午</td>
+                <td class="day-1">程式設計</td>
+                <td class="day-2">體育</td>
+                <td class="day-3">英文選修</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        // 步驟 2: 撰寫 JavaScript 函式
+        function highlightToday() {
+            // 1. 取得今天是星期幾 (0 是週日, 1 是週一, 依此類推)
+            const today = new Date().getDay();
+            
+            // 2. 先清除所有之前的高亮 (避免重複點擊)
+            const allCells = document.querySelectorAll('td');
+            allCells.forEach(cell => cell.classList.remove('highlight'));
+
+            // 3. 根據今天日期找到對應的 class 並加上高亮
+            // 例如今天是週一，就找所有 .day-1 的元素
+            const todayCells = document.querySelectorAll('.day-' + today);
+            
+            if (todayCells.length > 0) {
+                todayCells.forEach(cell => cell.classList.add('highlight'));
+                alert("已為您標記今天的課程！");
+            } else {
+                alert("今天沒有課，或是今天不在週一至週三的範例範圍內喔！");
+            }
+        }
+    </script>
+
+</body>
+</html>
