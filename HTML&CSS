@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>加入 CSS 的現代網頁</title>
+    <style>
+        /* 1. 設定全域字體與背景 */
+        body {
+            font-family: "Microsoft JhengHei", Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f7f6; /* 淺灰色背景 */
+            color: #333;
+            padding: 40px;
+        }
+
+        /* 2. 美化標題 */
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        /* 3. 現代表格樣式設計 */
+        table {
+            width: 100%;
+            border-collapse: collapse; /* 移除雙線邊框 */
+            margin: 20px 0;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 加入陰影 */
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* 設定標題列顏色 */
+        th {
+            background-color: #3498db;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        /* 隔行變色 (Zebra Stripes) */
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* 滑鼠懸停效果 */
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>資工學生的現代風格課表</h1>
+    <p>透過 CSS，原本單調的 HTML 表格現在看起來更具專業感且易於閱讀。</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>時段</th>
+                <th>週一</th>
+                <th>週二</th>
+                <th>週三</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>09:00 - 12:00</td>
+                <td>計算機概論</td>
+                <td>微積分</td>
+                <td>離散數學</td>
+            </tr>
+            <tr>
+                <td>13:30 - 16:30</td>
+                <td>程式設計 (C++)</td>
+                <td>體育</td>
+                <td>英文選修</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
