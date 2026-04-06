@@ -1,18 +1,15 @@
-// script.js
-function highlightToday() {
-    const today = new Date().getDay();
-    const allCells = document.querySelectorAll('td');
+function changeMood() {
+    const moods = [
+        { msg: "Code 一次就過！", color: "#2ecc71" },
+        { msg: "Bug 正在路上...", color: "#e74c3c" },
+        { msg: "今晚又要熬夜了？", color: "#3498db" },
+        { msg: "編譯器愛你！", color: "#9b59b6" },
+        { msg: "咖啡因不足...", color: "#f39c12" }
+    ];
     
-    // 清除舊的高亮
-    allCells.forEach(cell => cell.classList.remove('highlight'));
-
-    // 根據今天日期找到對應的 class
-    const todayCells = document.querySelectorAll('.day-' + today);
+    const randomIndex = Math.floor(Math.random() * moods.length);
+    const selected = moods[randomIndex];
     
-    if (todayCells.length > 0) {
-        todayCells.forEach(cell => cell.classList.add('highlight'));
-        alert("已為您標記今天的課程！");
-    } else {
-        alert("今天沒有課，或是今天不在週一至週三的範例範圍內喔！");
-    }
+    document.getElementById('message').innerText = selected.msg;
+    document.body.style.backgroundColor = selected.color;
 }
