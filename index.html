@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>加入 JS 的互動課表</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>我的智慧課表</h1>
+    
+    <button class="btn" onclick="highlightToday()">顯示今天課程</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>時段</th>
+                <th>週一</th>
+                <th>週二</th>
+                <th>週三</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>上午</td>
+                <td class="day-1">計算機概論</td> 
+                <td class="day-2">微積分</td>
+                <td class="day-3">離散數學</td>
+            </tr>
+            <tr>
+                <td>下午</td>
+                <td class="day-1">程式設計</td>
+                <td class="day-2">體育</td>
+                <td class="day-3">英文選修</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
